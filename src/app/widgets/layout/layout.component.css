@@ -1,0 +1,23 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.layout-body {
+  flex: 1;
+  display: flex;
+}
+.layout-sidebar {
+  width: 170px;
+}
+.layout-main {
+  flex: 1;
+  padding-left: 10px;
+}
+
+
+

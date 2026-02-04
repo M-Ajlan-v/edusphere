@@ -1,0 +1,22 @@
+.head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #0f172a;
+}
+.left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+img{
+    width: 60px;
+}
+h4, h3{
+    color:rgb(35 238 251);
+    font-family: cursive;
+}
+h4{
+    cursor: pointer;
+}

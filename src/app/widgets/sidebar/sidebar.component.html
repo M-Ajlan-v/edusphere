@@ -1,17 +1,27 @@
 <aside class="sidebar">
+
   <div class="sidebar-title">
     Admin Panel
   </div>
 
- <ul class="menu-list">
-  <li class="menu-item" routerLink="/dashboard" routerLinkActive="active">Dashboard</li>
-  <li class="menu-item" routerLink="/admissions" routerLinkActive="active">Admissions</li>
-  <li class="menu-item" routerLink="/students" routerLinkActive="active">Students</li>
-  <li class="menu-item" routerLink="/parents" routerLinkActive="active">Parents</li>
-  <li class="menu-item" routerLink="/attendance" routerLinkActive="active">Attendance</li>
-  <li class="menu-item" routerLink="/academics" routerLinkActive="active">Academics</li>
-  <li class="menu-item" routerLink="/notices" routerLinkActive="active">Notices</li>
-  <li class="menu-item" routerLink="/reports" routerLinkActive="active">Reports</li>
-</ul>
+  <ul class="menu-list">
+
+  <li class="menu-item"
+    *ngFor="let item of menuItems"
+    [routerLink]="item.url"
+    routerLinkActive="active">
+
+      <img [src]="item.icon"
+        alt="{{item.title}}"
+        class="menu-icon">
+
+    <span class="menu-text">
+      {{ item.title }}
+    </span>
+
+  </li>
+
+
+  </ul>
 
 </aside>

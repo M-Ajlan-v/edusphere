@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Dashboard",
+    "icon": "assets/icons/dashboard.png",
+    "url": "/dashboard"
+  },
+  {
+    "title": "Admissions",
+    "icon": "assets/icons/admissions.png",
+    "url": "/admissions"
+  },
+  {
+    "title": "Students",
+    "icon": "assets/icons/students.png",
+    "url": "/students"
+  },
+  {
+    "title": "Parents",
+    "icon": "assets/icons/parents.png",
+    "url": "/parents"
+  },
+  {
+    "title": "Attendance",
+    "icon": "assets/icons/attendance.png",
+    "url": "/attendance"
+  },
+  {
+    "title": "Academics",
+    "icon": "assets/icons/academics.png",
+    "url": "/academics"
+  },
+  {
+    "title": "Notices",
+    "icon": "assets/icons/notices.png",
+    "url": "/notices"
+  },
+  {
+    "title": "Reports",
+    "icon": "assets/icons/reports.png",
+    "url": "/reports"
+  }
+]

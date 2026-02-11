@@ -2,41 +2,55 @@
   {
     "title": "Dashboard",
     "icon": "assets/icons/dashboard.png",
-    "url": "/dashboard"
+    "url": "/dashboard",
+    "roles": ["admin", "parent"]
   },
   {
     "title": "Admissions",
     "icon": "assets/icons/admissions.png",
-    "url": "/admissions"
+    "url": "/admissions",
+    "roles": ["admin"]
   },
   {
     "title": "Students",
     "icon": "assets/icons/students.png",
-    "url": "/students"
+    "url": "/students",
+    "roles": ["admin"]
   },
   {
     "title": "Parents",
     "icon": "assets/icons/parents.png",
-    "url": "/parents"
+    "url": "/parents",
+    "roles": ["admin"]
   },
   {
     "title": "Attendance",
     "icon": "assets/icons/attendance.png",
-    "url": "/attendance"
+    "url": "/attendance",
+    "roles": ["admin", "parent"]
   },
   {
     "title": "Academics",
     "icon": "assets/icons/academics.png",
-    "url": "/academics"
+    "url": "/academics",
+    "roles": ["admin"]
   },
   {
     "title": "Notices",
     "icon": "assets/icons/notices.png",
-    "url": "/notices"
+    "url": "/notices",
+    "roles": ["admin"]
   },
   {
     "title": "Reports",
     "icon": "assets/icons/reports.png",
-    "url": "/reports"
+    "url": "/reports",
+    "roles": ["admin"]
+  },
+  {
+    "title": "My Profile",
+    "icon": "assets/icons/profile.png",
+    "url": "/profile",
+    "roles": ["parent"]
   }
 ]

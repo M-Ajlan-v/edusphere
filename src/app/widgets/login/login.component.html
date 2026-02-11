@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div class="login-wrapper">
+  <div class="login-box">
+    <h2>Welcome Back</h2>
+
+    <div class="form-group">
+      <input type="text" placeholder="Username" [(ngModel)]="username" />
+    </div>
+
+    <div class="form-group">
+      <input type="password" placeholder="Password" [(ngModel)]="password" />
+    </div>
+
+    <button (click)="login()">Login</button>
+
+    <p class="error">{{ error }}</p>
+  </div>
+</div>

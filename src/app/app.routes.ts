@@ -11,24 +11,27 @@ import { NoticesComponent } from './widgets/notices/notices.component';
 import { ReportsComponent } from './widgets/reports/reports.component';
 
 export const routes: Routes = [
-    {
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./widgets/login/login.component').then((m) => m.LoginComponent),
+  },
+
+  {
     path: '',
     component: LayoutComponent,
     children: [
-
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-
       { path: 'dashboard', component: DashboardComponent },
       { path: 'profile', component: ProfileComponent },
-
       { path: 'admissions', component: AdmissionsComponent },
       { path: 'students', component: StudentsComponent },
       { path: 'parents', component: ParentsComponent },
       { path: 'attendance', component: AttendanceComponent },
       { path: 'academics', component: AcademicsComponent },
       { path: 'notices', component: NoticesComponent },
-      { path: 'reports', component: ReportsComponent }
-
-    ]
-  }
+      { path: 'reports', component: ReportsComponent },
+    ],
+  },
 ];

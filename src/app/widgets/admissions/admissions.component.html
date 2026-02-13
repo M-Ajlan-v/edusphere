@@ -1,1 +1,55 @@
-<p>admissions works!</p>
+<u><h1 align="center">Student Admission Form</h1></u>
+
+<form [formGroup]="admissionForm" (ngSubmit)="submitAdmission()">
+
+  <div formGroupName="student">
+    <h2>Student Details</h2>
+
+    <label>Student Name</label><br>
+    <input type="text" formControlName="name"><br>
+
+    <label>Class</label><br>
+    <input type="text" formControlName="class"><br>
+
+    <label>Section</label><br>
+    <input type="text" formControlName="section"><br>
+
+    <label>Student Date Of Birth</label><br>
+    <input type="date" formControlName="dateOfBirth"><br>
+
+    <label>Student Gender</label><br>
+    <select formControlName="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select><br>
+
+    <label>Student Admission Date</label><br>
+    <input type="date" formControlName="admissionDate"><br>
+
+    <label>Student Address</label><br>
+    <input type="text" formControlName="address"><br><br>
+  </div>
+
+
+  <div formGroupName="parent">
+    <h3>Parent Details</h3>
+
+    <label>Parent Name</label><br>
+    <input type="text" formControlName="name"><br>
+
+    <label>Parent Email</label><br>
+    <input type="email" formControlName="email"><br>
+
+    <label>Parent Phone</label><br>
+    <input type="text" formControlName="phone"><br>
+
+    <label>Parent Password</label><br>
+    <input type="password" formControlName="password"><br>
+
+    <label>Parent Address</label><br>
+    <input type="text" formControlName="address"><br><br>
+  </div>
+
+  <button type="submit">Submit Admission</button>
+</form>

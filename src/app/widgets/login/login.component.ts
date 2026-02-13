@@ -20,7 +20,12 @@ export class LoginComponent {
     const success = this.auth.login(this.username, this.password);
 
     if (success) {
-      this.router.navigate(['/dashboard']);
+      const role = this.auth.getRole();
+      if (role === 'admin') {
+        this.router.navigate(['/admin-dashboard']);
+      } else if (role === 'parent') {
+        this.router.navigate(['/parent-dashboard']);
+      }
     } else {
       this.error = 'Invalid credentials';
     }

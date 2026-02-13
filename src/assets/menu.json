@@ -1,9 +1,9 @@
 [
   {
-    "title": "Dashboard",
+    "title": "Admin Dashboard",
     "icon": "assets/icons/dashboard.png",
-    "url": "/dashboard",
-    "roles": ["admin", "parent"]
+    "url": "/admin-dashboard",
+    "roles": ["admin"]
   },
   {
     "title": "Admissions",
@@ -24,10 +24,10 @@
     "roles": ["admin"]
   },
   {
-    "title": "Attendance",
+    "title": "Attendance Management",
     "icon": "assets/icons/attendance.png",
-    "url": "/attendance",
-    "roles": ["admin", "parent"]
+    "url": "/attendance-management",
+    "roles": ["admin"]
   },
   {
     "title": "Academics",
@@ -46,6 +46,49 @@
     "icon": "assets/icons/reports.png",
     "url": "/reports",
     "roles": ["admin"]
+  },
+
+  {
+    "title": "Parent Dashboard",
+    "icon": "assets/icons/dashboard.png",
+    "url": "/parent-dashboard",
+    "roles": ["parent"]
+  },
+  {
+    "title": "My Child",
+    "icon": "assets/icons/students.png",
+    "url": "/my-child",
+    "roles": ["parent"]
+  },
+  {
+    "title": "My Attendance",
+    "icon": "assets/icons/attendance.png",
+    "url": "/parent-attendance",
+    "roles": ["parent"]
+  },
+  {
+    "title": "Results",
+    "icon": "assets/icons/results.png",
+    "url": "/results",
+    "roles": ["parent"]
+  },
+  {
+    "title": "Fees",
+    "icon": "assets/icons/fees.png",
+    "url": "/fees",
+    "roles": ["parent"]
+  },
+  {
+    "title": "Messages",
+    "icon": "assets/icons/messages.png",
+    "url": "/messages",
+    "roles": ["parent"]
+  },
+  {
+    "title": "School Notices",
+    "icon": "assets/icons/notices.png",
+    "url": "/parent-notices",
+    "roles": ["parent"]
   },
   {
     "title": "My Profile",

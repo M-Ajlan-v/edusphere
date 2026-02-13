@@ -12,7 +12,7 @@ html, body {
   display: flex;
 }
 .layout-sidebar {
-  width: 170px;
+  width: 240px;
 }
 .layout-main {
   flex: 1;

@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Parent } from '../../models/parent.model';
 import { Student } from '../../models/student.model';
 
@@ -8,10 +13,9 @@ import { Student } from '../../models/student.model';
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './admissions.component.html',
-  styleUrl: './admissions.component.css'
+  styleUrl: './admissions.component.css',
 })
 export class AdmissionsComponent {
-
   admissionForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -27,20 +31,19 @@ export class AdmissionsComponent {
         dateOfBirth: ['', Validators.required],
         gender: ['Male', Validators.required],
         admissionDate: ['', Validators.required],
-        address: ['', Validators.required]
+        address: ['', Validators.required],
       }),
       parent: this.fb.group({
         name: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         phone: ['', Validators.required],
         password: ['', Validators.required],
-        address: ['', Validators.required]
-      })
+        address: ['', Validators.required],
+      }),
     });
   }
 
   submitAdmission() {
-
     if (this.admissionForm.invalid) {
       alert('Please fill all fields');
       return;
@@ -55,14 +58,14 @@ export class AdmissionsComponent {
       id: parentId,
       ...formValue.parent,
       studentIds: [studentId],
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
 
     const student: Student = {
       id: studentId,
       ...formValue.student,
       parentId: parentId,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
     };
 
     const parents = JSON.parse(localStorage.getItem('parents') || '[]');

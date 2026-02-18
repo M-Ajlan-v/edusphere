@@ -9,7 +9,6 @@ export const roleGuard: CanActivateFn = (route, state) => {
   const expectedRole = route.data['role'];
   const userRole = authService.getRole();
 
-  // User has the correct role - allow access
   if (userRole === expectedRole) {
     return true;
   }

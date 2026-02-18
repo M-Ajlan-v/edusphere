@@ -1,49 +1,28 @@
-<h2>Student Admission List</h2>
+<h2>Students List</h2>
 
-<table border="1" width="90%" cellpadding="4">
-
+<table border="1" cellpadding="5">
   <thead>
     <tr>
-      <th>Sl No</th>
-      <th>Admission No</th>
       <th>Name</th>
-      <th>Class</th>
-      <th>Section</th>
       <th>DOB</th>
       <th>Gender</th>
-      <th>Admission Date</th>
+      <th>Class</th>
       <th>Address</th>
-      <th>Parent ID</th>
-      <th>Actions</th>
+      <th>Parent Name</th>
     </tr>
   </thead>
-
   <tbody>
 
-    <tr *ngFor="let student of students">
-
-      <td></td>
-      <td>{{student.admissionNo}}</td>
-      <td>{{student.name}}</td>
-      <td>{{student.class}}</td>
-      <td>{{student.section}}</td>
-      <td>{{student.dob}}</td>
-      <td>{{student.gender}}</td>
-      <td>{{student.admissionDate}}</td>
-      <td>{{student.address}}</td>
-      <td>{{student.parentId}}</td>
-
-      <td>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-
-    </tr>
-
-    <tr *ngIf="students.length === 0">
-      <td colspan="11" align="center">No Students Admitted Yet</td>
-    </tr>
+    @for (student of students; track student.id) {
+      <tr>
+        <td>{{ student.name }}</td>
+        <td>{{ student.dob }}</td>
+        <td>{{ student.gender }}</td>
+        <td>{{ student.class }}</td>
+        <td>{{ student.address }}</td>
+        <td>{{ getParentName(student.parentId) }}</td>
+      </tr>
+    }
 
   </tbody>
-
 </table>

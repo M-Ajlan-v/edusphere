@@ -1,55 +1,93 @@
-<u><h1 align="center">Student Admission Form</h1></u>
+<h2 class="title">Student Admission</h2>
 
-<form [formGroup]="admissionForm" (ngSubmit)="submitAdmission()">
+<form [formGroup]="admissionForm" (ngSubmit)="onSubmit()" class="form-container">
 
-  <div formGroupName="student">
-    <h2>Student Details</h2>
+  <!-- STUDENT SECTION -->
+  <div class="form-section">
+    <h3>Student Details</h3>
 
-    <label>Student Name</label><br>
-    <input type="text" formControlName="name"><br>
+    <div formGroupName="student" class="form-grid">
 
-    <label>Class</label><br>
-    <input type="text" formControlName="class"><br>
+      <div class="form-field">
+        <label>Student Name</label>
+        <input type="text" formControlName="name">
+        @if (isInvalid('student','name')) {
+          <small class="error">Name is required (min 3 characters)</small>
+        }
+      </div>
 
-    <label>Section</label><br>
-    <input type="text" formControlName="section"><br>
+      <div class="form-field">
+        <label>Date of Birth</label>
+        <input type="date" formControlName="dob">
+        @if (isInvalid('student','dob')) {
+          <small class="error">Date of birth is required</small>
+        }
+      </div>
 
-    <label>Student Date Of Birth</label><br>
-    <input type="date" formControlName="dateOfBirth"><br>
+      <div class="form-field">
+        <label>Gender</label>
+        <select formControlName="gender">
+          <option value="">Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        @if (isInvalid('student','gender')) {
+          <small class="error">Gender is required</small>
+        }
+      </div>
 
-    <label>Student Gender</label><br>
-    <select formControlName="gender">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-      <option value="Other">Other</option>
-    </select><br>
+      <div class="form-field">
+        <label>Class</label>
+        <input type="text" formControlName="class">
+        @if (isInvalid('student','class')) {
+          <small class="error">Class is required</small>
+        }
+      </div>
 
-    <label>Student Admission Date</label><br>
-    <input type="date" formControlName="admissionDate"><br>
+      <div class="form-field full-width">
+        <label>Address</label>
+        <input type="text" formControlName="address">
+        @if (isInvalid('student','address')) {
+          <small class="error">Address is required</small>
+        }
+      </div>
 
-    <label>Student Address</label><br>
-    <input type="text" formControlName="address"><br><br>
+    </div>
   </div>
 
-
-  <div formGroupName="parent">
+  <!-- PARENT SECTION -->
+  <div class="form-section">
     <h3>Parent Details</h3>
 
-    <label>Parent Name</label><br>
-    <input type="text" formControlName="name"><br>
+    <div formGroupName="parent" class="form-grid">
 
-    <label>Parent Email</label><br>
-    <input type="email" formControlName="email"><br>
+      <div class="form-field">
+        <label>Parent Name</label>
+        <input type="text" formControlName="name">
+        @if (isInvalid('parent','name')) {
+          <small class="error">Parent name is required</small>
+        }
+      </div>
 
-    <label>Parent Phone</label><br>
-    <input type="text" formControlName="phone"><br>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" formControlName="email">
+        @if (isInvalid('parent','email')) {
+          <small class="error">Valid email is required</small>
+        }
+      </div>
 
-    <label>Parent Password</label><br>
-    <input type="password" formControlName="password"><br>
+      <div class="form-field">
+        <label>Phone</label>
+        <input type="text" formControlName="phone">
+        @if (isInvalid('parent','phone')) {
+          <small class="error">Phone must be 10 digits</small>
+        }
+      </div>
 
-    <label>Parent Address</label><br>
-    <input type="text" formControlName="address"><br><br>
+    </div>
   </div>
 
-  <button type="submit">Submit Admission</button>
+  <button type="submit" class="submit-btn">Submit Admission</button>
+
 </form>

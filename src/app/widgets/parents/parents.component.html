@@ -1,1 +1,36 @@
-<p>parents works!</p>
+<h2>Parents List</h2>
+
+<table border="1" cellpadding="6">
+  <thead>
+    <tr>
+      <th>Parent Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Total Students</th>
+      <th>Students</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    @for (parent of parents; track parent.id) {
+
+      <tr>
+        <td>{{ parent.name }}</td>
+        <td>{{ parent.email }}</td>
+        <td>{{ parent.phone }}</td>
+        <td>{{ parent.studentIds.length }}</td>
+
+        <td>
+          @for (student of getStudentsByParent(parent.id); track student.id) {
+            <div>
+              {{ student.name }} ({{ student.class }})
+            </div>
+          }
+        </td>
+      </tr>
+
+    }
+
+  </tbody>
+</table>

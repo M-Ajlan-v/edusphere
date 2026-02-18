@@ -7,11 +7,12 @@ import {
 } from '@angular/forms';
 import { Parent } from '../../models/parent.model';
 import { Student } from '../../models/student.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admissions',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './admissions.component.html',
   styleUrl: './admissions.component.css',
 })
@@ -42,12 +43,14 @@ export class AdmissionsComponent {
       }),
     });
   }
+submitAdmission() {
+  if (this.admissionForm.invalid) {
+    this.admissionForm.markAllAsTouched(); 
+    return;
+  }
 
-  submitAdmission() {
-    if (this.admissionForm.invalid) {
-      alert('Please fill all fields');
-      return;
-    }
+
+
 
     const formValue = this.admissionForm.value;
 

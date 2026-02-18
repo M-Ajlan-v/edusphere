@@ -6,16 +6,37 @@
     <h2>Student Details</h2>
 
     <label>Student Name</label><br>
-    <input type="text" formControlName="name"><br>
+<input type="text" formControlName="name"><br>
+<div *ngIf="admissionForm.get('student.name')?.touched && admissionForm.get('student.name')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
+
 
     <label>Class</label><br>
-    <input type="text" formControlName="class"><br>
+  <input type="text" formControlName="class"><br>
+<div *ngIf="admissionForm.get('student.class')?.touched && admissionForm.get('student.class')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
 
     <label>Section</label><br>
-    <input type="text" formControlName="section"><br>
+  <input type="text" formControlName="section"><br>
+<div *ngIf="admissionForm.get('student.section')?.touched && admissionForm.get('student.section')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
 
     <label>Student Date Of Birth</label><br>
-    <input type="date" formControlName="dateOfBirth"><br>
+  <input type="date" formControlName="dateOfBirth"><br>
+<div *ngIf="admissionForm.get('student.dateOfBirth')?.touched && admissionForm.get('student.dateOfBirth')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
 
     <label>Student Gender</label><br>
     <select formControlName="gender">
@@ -23,12 +44,29 @@
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select><br>
+ <select formControlName="gender">
+...
+</select><br>
+<div *ngIf="admissionForm.get('student.gender')?.touched && admissionForm.get('student.gender')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
 
     <label>Student Admission Date</label><br>
-    <input type="date" formControlName="admissionDate"><br>
+  <input type="date" formControlName="admissionDate"><br>
+<div *ngIf="admissionForm.get('student.admissionDate')?.touched && admissionForm.get('student.admissionDate')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
 
     <label>Student Address</label><br>
-    <input type="text" formControlName="address"><br><br>
+  <input type="text" formControlName="address"><br>
+<div *ngIf="admissionForm.get('student.address')?.touched && admissionForm.get('student.address')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
   </div>
 
 
@@ -36,19 +74,44 @@
     <h3>Parent Details</h3>
 
     <label>Parent Name</label><br>
-    <input type="text" formControlName="name"><br>
+   <input type="text" formControlName="name"><br>
+<div *ngIf="admissionForm.get('parent.name')?.touched && admissionForm.get('parent.name')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
 
     <label>Parent Email</label><br>
     <input type="email" formControlName="email"><br>
+<div *ngIf="admissionForm.get('parent.email')?.touched && admissionForm.get('parent.email')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
+
 
     <label>Parent Phone</label><br>
-    <input type="text" formControlName="phone"><br>
+ <input type="text" formControlName="phone"><br>
+<div *ngIf="admissionForm.get('parent.phone')?.touched && admissionForm.get('parent.phone')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
 
     <label>Parent Password</label><br>
-    <input type="password" formControlName="password"><br>
+   <input type="password" formControlName="password"><br>
+<div *ngIf="admissionForm.get('parent.password')?.touched && admissionForm.get('parent.password')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
 
     <label>Parent Address</label><br>
-    <input type="text" formControlName="address"><br><br>
+  <input type="text" formControlName="address"><br>
+<div *ngIf="admissionForm.get('parent.address')?.touched && admissionForm.get('parent.address')?.hasError('required')" style="color:red">
+  This field is required
+</div>
+
+
   </div>
 
   <button type="submit">Submit Admission</button>

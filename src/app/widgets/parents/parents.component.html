@@ -1,1 +1,25 @@
-<p>parents works!</p>
+<h1 align="center">Parents List</h1>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Parent Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Student ID</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let parent of parents">
+        <td>{{ parent.name }}</td>
+        <td>{{ parent.email }}</td>
+        <td>{{ parent.phone }}</td>
+        <td>{{ parent.address }}</td>
+        <td>{{ parent.studentIds?.join(', ') }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

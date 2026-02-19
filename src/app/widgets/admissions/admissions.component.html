@@ -1,55 +1,109 @@
-<u><h1 align="center">Student Admission Form</h1></u>
+
+<h1 align="center">Student Admission Form</h1>
 
 <form [formGroup]="admissionForm" (ngSubmit)="submitAdmission()">
 
+  <!-- STUDENT GROUP -->
   <div formGroupName="student">
     <h2>Student Details</h2>
 
-    <label>Student Name</label><br>
+    <label>Name</label><br>
     <input type="text" formControlName="name"><br>
+    <div *ngIf="studentGroup.get('name')?.invalid && studentGroup.get('name')?.touched" style="color:red">
+      Name is required
+    </div>
 
     <label>Class</label><br>
     <input type="text" formControlName="class"><br>
+    <div *ngIf="studentGroup.get('class')?.invalid && studentGroup.get('class')?.touched" style="color:red">
+      Class is required
+    </div>
 
     <label>Section</label><br>
     <input type="text" formControlName="section"><br>
+    <div *ngIf="studentGroup.get('section')?.invalid && studentGroup.get('section')?.touched" style="color:red">
+      Section is required
+    </div>
 
-    <label>Student Date Of Birth</label><br>
+    <label>Date Of Birth</label><br>
     <input type="date" formControlName="dateOfBirth"><br>
+    <div *ngIf="studentGroup.get('dateOfBirth')?.invalid && studentGroup.get('dateOfBirth')?.touched" style="color:red">
+      Date of Birth is required
+    </div>
 
-    <label>Student Gender</label><br>
+    <label>Gender</label><br>
     <select formControlName="gender">
+      <option value="">Select Gender</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
       <option value="Other">Other</option>
     </select><br>
+    <div *ngIf="studentGroup.get('gender')?.invalid && studentGroup.get('gender')?.touched" style="color:red">
+      Gender is required
+    </div>
 
-    <label>Student Admission Date</label><br>
+    <label>Admission Date</label><br>
     <input type="date" formControlName="admissionDate"><br>
+    <div *ngIf="studentGroup.get('admissionDate')?.invalid && studentGroup.get('admissionDate')?.touched" style="color:red">
+      Admission Date is required
+    </div>
 
-    <label>Student Address</label><br>
-    <input type="text" formControlName="address"><br><br>
+    <label>Address</label><br>
+    <input type="text" formControlName="address"><br>
+    <div *ngIf="studentGroup.get('address')?.invalid && studentGroup.get('address')?.touched" style="color:red">
+      Address is required
+    </div>
+
   </div>
 
+  <hr>
 
+  <!-- PARENT GROUP -->
   <div formGroupName="parent">
-    <h3>Parent Details</h3>
+    <h2>Parent Details</h2>
 
-    <label>Parent Name</label><br>
+    <label>Name</label><br>
     <input type="text" formControlName="name"><br>
+    <div *ngIf="parentGroup.get('name')?.invalid && parentGroup.get('name')?.touched" style="color:red">
+      Parent name is required
+    </div>
 
-    <label>Parent Email</label><br>
+    <label>Email</label><br>
     <input type="email" formControlName="email"><br>
+    <div *ngIf="parentGroup.get('email')?.errors?.['required'] && parentGroup.get('email')?.touched" style="color:red">
+      Email is required
+    </div>
+    <div *ngIf="parentGroup.get('email')?.errors?.['email'] && parentGroup.get('email')?.touched" style="color:red">
+      Enter valid email
+    </div>
 
-    <label>Parent Phone</label><br>
+    <label>Phone</label><br>
     <input type="text" formControlName="phone"><br>
+    <div *ngIf="parentGroup.get('phone')?.errors?.['required'] && parentGroup.get('phone')?.touched" style="color:red">
+      Phone is required
+    </div>
+    <div *ngIf="parentGroup.get('phone')?.errors?.['pattern'] && parentGroup.get('phone')?.touched" style="color:red">
+      Phone must be 10 digits
+    </div>
 
-    <label>Parent Password</label><br>
+    <label>Password</label><br>
     <input type="password" formControlName="password"><br>
+    <div *ngIf="parentGroup.get('password')?.errors?.['required'] && parentGroup.get('password')?.touched" style="color:red">
+      Password is required
+    </div>
+    <div *ngIf="parentGroup.get('password')?.errors?.['minlength'] && parentGroup.get('password')?.touched" style="color:red">
+      Minimum 6 characters required
+    </div>
 
-    <label>Parent Address</label><br>
-    <input type="text" formControlName="address"><br><br>
+    <label>Address</label><br>
+    <input type="text" formControlName="address"><br>
+    <div *ngIf="parentGroup.get('address')?.invalid && parentGroup.get('address')?.touched" style="color:red">
+      Address is required
+    </div>
+
   </div>
 
+  <br>
   <button type="submit">Submit Admission</button>
+
 </form>

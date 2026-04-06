@@ -1,10 +1,8 @@
-/* Title */
 .title {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Main Form Container */
 .form-container {
   max-width: 900px;
   margin: auto;
@@ -14,7 +12,6 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Each Section */
 .form-section {
   margin-bottom: 30px;
 }
@@ -25,31 +22,27 @@
   padding-bottom: 5px;
 }
 
-/* Grid Layout */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-/* Each Field */
 .form-field {
   display: flex;
   flex-direction: column;
 }
 
-/* Full width for address */
 .full-width {
   grid-column: span 2;
 }
 
-/* Labels */
 label {
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-/* Inputs */
+
 input,
 select {
   padding: 8px;
@@ -59,7 +52,6 @@ select {
   transition: 0.2s ease;
 }
 
-/* Focus Effect */
 input:focus,
 select:focus {
   outline: none;
@@ -67,14 +59,12 @@ select:focus {
   box-shadow: 0 0 3px rgba(63, 81, 181, 0.5);
 }
 
-/* Error Message */
 .error {
   color: red;
   font-size: 12px;
   margin-top: 4px;
 }
 
-/* Submit Button */
 .submit-btn {
   padding: 10px 20px;
   background: #3f51b5;
